@@ -5,7 +5,8 @@ RUN docker-php-ext-install pdo_mysql
 RUN a2enmod rewrite
 RUN a2enmod ssl
 
-ADD index.php  /var/www/html/index.php
+ADD index.php  /var/www/html
+ADD vhost.conf  /etc/apache2/sites-enabled
 
 EXPOSE 80
 EXPOSE 443
