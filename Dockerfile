@@ -5,8 +5,13 @@ RUN docker-php-ext-install pdo_mysql
 RUN a2enmod rewrite
 RUN a2enmod ssl
 
+ADD index.php  /var/www/html/index.php
+
 EXPOSE 80
 EXPOSE 443
 
-VOLUME ["/var/www/html"]
+VOLUME ["/data/wwwroot"]
+VOLUME ["/data/wwwconfig"]
+VOLUME ["/data/wwwlog"]
+VOLUME ["/data/wwwssl"]
 
